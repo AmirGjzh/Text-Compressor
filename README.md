@@ -1,4 +1,4 @@
-# huffman-compressor
+# huffman-compressor 
 
 > A small command-line Huffman encoder/decoder for `.txt` files.
 
