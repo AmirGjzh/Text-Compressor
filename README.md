@@ -22,7 +22,7 @@ Text-Compressor/
 ├── output/                       # Generated compressed/decompressed files
 ├── docs/                         # Documentation
 ├── README.md                     # This file
-└── compile_and_run.bat           # Quick compile script
+└── compile.bat                   # Quick compile script
 ```
 
 ## 🔧 Setup & Installation
