@@ -1,0 +1,15 @@
+# Ignore output contents but keep .gitkeep so the directory is tracked
+output/*
+!output/.gitkeep
+
+# Ignore compiled binaries and temporary build files
+*.exe
+*.out
+*.o
+*.obj
+Binary*.txt
+
+# Editor/OS files
+Thumbs.db
+.DS_Store
+*.log
