@@ -1,0 +1,16 @@
+The quick brown fox jumps over the lazy dog. This is a test file for the Huffman Text Compressor.
+
+This file contains repeated words and characters to test the compression algorithm.
+Huffman encoding is particularly effective for text with character frequency patterns.
+
+The compression ratio depends on the variety of characters in the text.
+Files with less variety (fewer unique characters) will compress better.
+Files with high entropy (random data) will not compress well.
+
+Let's add more text to make this file bigger and see how well the compression works.
+The Huffman algorithm was invented by David A. Huffman in 1952.
+It's an optimal lossless data compression algorithm.
+It works by assigning variable-length codes to characters based on their frequency.
+
+Repeated text: aaaa bbbb cccc dddd eeee ffff gggg hhhh iiii jjjj kkkk llll mmmm nnnn oooo pppp
+More patterns: aaa bbb ccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss
