@@ -8,7 +8,6 @@ A lightweight **C implementation** of Huffman encoding/decoding for text file co
 - ✅ **CLI Interface**: Simple command-line interface for compression and decompression
 - ✅ **Organized Output**: All output files organized in dedicated folders
 - ✅ **Automatic Cleanup**: Temporary binary files cleaned up automatically
-- ✅ **Cross-Platform**: Works on Windows (uses Windows console colors)
 - ✅ **No External Dependencies**: Pure C with standard libraries only
 
 ## 📁 Project Structure
