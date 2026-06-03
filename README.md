@@ -1,8 +1,8 @@
-# Huffman Text Compressor 🗜️
+# Huffman Text Compressor 
 
 A lightweight C implementation of Huffman encoding/decoding for text file compression. This repository includes a small CLI program to compress and decompress plain text files using Huffman coding.
 
-## Features ✨
+## ✨ Features 
 
 - Huffman coding based text compression
 - Simple CLI interface for compressing and decompressing files
@@ -10,7 +10,7 @@ A lightweight C implementation of Huffman encoding/decoding for text file compre
 - Automatic cleanup of temporary intermediate files (`Binary.txt`, `Binary2.txt`)
 - Pure C implementation with no external dependencies
 
-## Project Structure 📁
+## 📁 Project Structure 
 
 ```
 Text-Compressor/
@@ -25,7 +25,7 @@ Text-Compressor/
 └── README.md                 # This file
 ```
 
-## Setup & Compilation ⚙️
+## ⚙️ Setup & Compilation 
 
 ### Prerequisites
 
@@ -43,11 +43,11 @@ gcc -o main.exe main.c
 
 Or run `compile.bat` from the repository root (Windows) to build and see quick usage hints.
 
-## Usage ▶️
+## ▶️ Usage 
 
 All outputs are written to the `output/` folder by default. Put your input files in `samples/` for convenience.
 
-### Compress a file 🗜️
+### 🗜️ Compress a file 
 
 ```
 main com <input_file>
@@ -72,7 +72,7 @@ Cleaned up: ..\output\Binary.txt
     Compressed file: ..\output\Compressed.txt
 ```
 
-### Decompress a file 📂
+### 📂 Decompress a file 
 
 ```
 main decom <compressed_file> <guide_file>
@@ -95,13 +95,13 @@ Cleaned up: ..\output\Binary2.txt
     Decompressed file: ..\output\Decompressed.txt
 ```
 
-### Help ❓
+### ❓ Help 
 
 ```
 main help
 ```
 
-## Quick Test ✅
+## ✅ Quick Test 
 
 1. Create or use an existing sample in `samples/`:
 
@@ -125,18 +125,18 @@ $dec = Get-Content ..\output\Decompressed.txt -Raw
 if ($orig -eq $dec) { Write-Host "SUCCESS: Files are identical" } else { Write-Host "ERROR: Files differ" }
 ```
 
-## Implementation notes 📝
+## 📝 Implementation notes 
 
 - The program creates temporary binary representations (`Binary.txt` / `Binary2.txt`) during processing. These files are removed automatically after each run.
 - The `Guide.txt` file contains the Huffman code mapping (required for decompression). Keep it alongside `Compressed.txt` if you want to decompress later.
 - This implementation is optimized for plain text files. Binary input may not produce meaningful compression gains.
 
-## Troubleshooting 🛠️
+## 🛠️ Troubleshooting 
 
 - `Error: File '...' couldn't be opened!` — check the path and ensure the file exists.
 - Decompression failed — make sure you supply the correct `Guide.txt` generated at compression time.
 - If build fails, ensure `gcc` is installed and on your PATH.
 
-## License 📜
+## 📜 License 
 
 Educational implementation. Feel free to use and modify.
