@@ -2,6 +2,8 @@
 
 A lightweight C implementation of Huffman encoding/decoding for text file compression. This repository includes a small CLI program to compress and decompress plain text files using Huffman coding.
 
+---
+
 ## ✨ Features 
 
 - Huffman coding based text compression
@@ -9,6 +11,8 @@ A lightweight C implementation of Huffman encoding/decoding for text file compre
 - Organized `samples/` (inputs) and `output/` (results) folders
 - Automatic cleanup of temporary intermediate files (`Binary.txt`, `Binary2.txt`)
 - Pure C implementation with no external dependencies
+
+---
 
 ## 📁 Project Structure 
 
@@ -24,6 +28,8 @@ Text-Compressor/
 ├── compile.bat               # Windows build helper
 └── README.md                 # This file
 ```
+
+---
 
 ## ⚙️ Setup & Compilation 
 
@@ -42,6 +48,8 @@ gcc -o main.exe main.c
 ```
 
 Or run `compile.bat` from the repository root (Windows) to build and see quick usage hints.
+
+---
 
 ## ▶️ Usage 
 
@@ -101,6 +109,8 @@ Cleaned up: ..\output\Binary2.txt
 main help
 ```
 
+---
+
 ## ✅ Quick Test 
 
 1. Create or use an existing sample in `samples/`:
@@ -125,17 +135,23 @@ $dec = Get-Content ..\output\Decompressed.txt -Raw
 if ($orig -eq $dec) { Write-Host "SUCCESS: Files are identical" } else { Write-Host "ERROR: Files differ" }
 ```
 
+---
+
 ## 📝 Implementation notes 
 
 - The program creates temporary binary representations (`Binary.txt` / `Binary2.txt`) during processing. These files are removed automatically after each run.
 - The `Guide.txt` file contains the Huffman code mapping (required for decompression). Keep it alongside `Compressed.txt` if you want to decompress later.
 - This implementation is optimized for plain text files. Binary input may not produce meaningful compression gains.
 
+---
+
 ## 🛠️ Troubleshooting 
 
 - `Error: File '...' couldn't be opened!` — check the path and ensure the file exists.
 - Decompression failed — make sure you supply the correct `Guide.txt` generated at compression time.
 - If build fails, ensure `gcc` is installed and on your PATH.
+
+---
 
 ## 📜 License 
 
