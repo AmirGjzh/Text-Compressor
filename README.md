@@ -155,4 +155,4 @@ if ($orig -eq $dec) { Write-Host "SUCCESS: Files are identical" } else { Write-H
 
 ## 📜 License 
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
