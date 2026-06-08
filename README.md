@@ -139,4 +139,4 @@ if ($orig -eq $dec) { Write-Host "SUCCESS: Files are identical" } else { Write-H
 
 ## 📜 License 
 
-Educational implementation. Feel free to use and modify.
+This project is licensed under the MIT License.
