@@ -1,20 +1,18 @@
-# Huffman Text Compressor 
+# 🗜️ Huffman Text Compressor
 
-A lightweight C implementation of Huffman encoding/decoding for text file compression. This repository includes a small CLI program to compress and decompress plain text files using Huffman coding.
-
----
-
-## ✨ Features 
-
-- Huffman coding based text compression
-- Simple CLI interface for compressing and decompressing files
-- Organized `samples/` (inputs) and `output/` (results) folders
-- Automatic cleanup of temporary intermediate files (`Binary.txt`, `Binary2.txt`)
-- Pure C implementation with no external dependencies
+A small C program for compressing and decompressing text files with Huffman coding. Comes with a simple CLI, no external dependencies.
 
 ---
 
-## 📁 Project Structure 
+## ✨ Features
+
+- Text compression and decompression using Huffman coding
+- Simple command-line interface
+- `samples/` for inputs and `output/` for results, kept separate
+- Temporary files (`Binary.txt`, `Binary2.txt`) get cleaned up automatically after each run
+- Pure C — nothing to install besides a compiler
+
+## 📁 Project Structure
 
 ```
 Text-Compressor/
@@ -22,52 +20,45 @@ Text-Compressor/
 │   ├── main.c
 │   ├── compress_functions.c
 │   └── Compress_Functions.h
-├── samples/                  # Place input .txt files here
-├── output/                   # Generated compressed/decompressed files
-├── docs/                     # Documentation and guides
+├── samples/                  # Drop your input .txt files here
+├── output/                   # Compressed/decompressed files end up here
+├── docs/                     # Extra docs and guides
 ├── compile.bat               # Windows build helper
-└── README.md                 # This file
+└── README.md
 ```
 
----
+## 🚀 Getting Started
 
-## ⚙️ Setup & Compilation 
+**Prerequisites**
+- Windows (the paths below use Windows-style separators)
+- A C compiler — `gcc` (MinGW) works fine
 
-### Prerequisites
+**Build it**
 
-- Windows (instructions use Windows paths)
-- A C compiler such as `gcc` (MinGW) or compatible toolchain
-
-### Compile manually
-
-Open a terminal, then:
-
-```powershell
+```bash
 cd src
 gcc -o main.exe main.c
 ```
 
-Or run `compile.bat` from the repository root (Windows) to build and see quick usage hints.
+Or just run `compile.bat` from the repo root — it builds the project and prints a quick usage guide.
 
----
+## ▶️ Usage
 
-## ▶️ Usage 
+Everything gets written to `output/` by default. Drop your input files in `samples/` first.
 
-All outputs are written to the `output/` folder by default. Put your input files in `samples/` for convenience.
+**Compress a file**
 
-### 🗜️ Compress a file 
-
-```
+```bash
 main com <input_file>
 ```
 
-Example (from `src` folder):
+Example (run from `src`):
 
-```powershell
+```bash
 main com ..\samples\sample.txt
 ```
 
-Typical output messages:
+You'll see something like:
 
 ```
 [OK] Input file read successfully.
@@ -80,19 +71,19 @@ Cleaned up: ..\output\Binary.txt
     Compressed file: ..\output\Compressed.txt
 ```
 
-### 📂 Decompress a file 
+**Decompress a file**
 
-```
+```bash
 main decom <compressed_file> <guide_file>
 ```
 
 Example:
 
-```powershell
+```bash
 main decom ..\output\Compressed.txt ..\output\Guide.txt
 ```
 
-Typical output messages:
+You'll see:
 
 ```
 [OK] Guide file read successfully.
@@ -103,31 +94,23 @@ Cleaned up: ..\output\Binary2.txt
     Decompressed file: ..\output\Decompressed.txt
 ```
 
-### ❓ Help 
+**Need a reminder?**
 
-```
+```bash
 main help
 ```
 
----
+## ✅ Quick Test
 
-## ✅ Quick Test 
-
-1. Create or use an existing sample in `samples/`:
-
-```powershell
+```bash
 echo This is a test file for compression. > samples\test.txt
-```
 
-2. From `src` compile and run:
-
-```powershell
 gcc -o main.exe main.c
 main com ..\samples\test.txt
 main decom ..\output\Compressed.txt ..\output\Guide.txt
 ```
 
-3. Verify the result (PowerShell):
+Then check the result matches (PowerShell):
 
 ```powershell
 $orig = Get-Content ..\samples\test.txt -Raw
@@ -135,24 +118,22 @@ $dec = Get-Content ..\output\Decompressed.txt -Raw
 if ($orig -eq $dec) { Write-Host "SUCCESS: Files are identical" } else { Write-Host "ERROR: Files differ" }
 ```
 
----
+## 📝 A Few Notes
 
-## 📝 Implementation notes 
+- The program creates temporary binary files (`Binary.txt` / `Binary2.txt`) while it works, and removes them once it's done.
+- `Guide.txt` holds the Huffman code mapping — you need it to decompress later, so keep it next to `Compressed.txt`.
+- This is built for plain text. Feeding it binary files won't get you much (if any) compression.
 
-- The program creates temporary binary representations (`Binary.txt` / `Binary2.txt`) during processing. These files are removed automatically after each run.
-- The `Guide.txt` file contains the Huffman code mapping (required for decompression). Keep it alongside `Compressed.txt` if you want to decompress later.
-- This implementation is optimized for plain text files. Binary input may not produce meaningful compression gains.
+## 🛠️ Troubleshooting
 
----
+- **`File '...' couldn't be opened!`** — double check the path and that the file actually exists.
+- **Decompression fails** — make sure you're pointing to the `Guide.txt` that was generated alongside that specific `Compressed.txt`.
+- **Build fails** — make sure `gcc` is installed and available on your PATH.
 
-## 🛠️ Troubleshooting 
+## 🤝 Contributing
 
-- `Error: File '...' couldn't be opened!` — check the path and ensure the file exists.
-- Decompression failed — make sure you supply the correct `Guide.txt` generated at compression time.
-- If build fails, ensure `gcc` is installed and on your PATH.
+Found a bug or have an idea? Open an issue or send a pull request — contributions are always welcome.
 
----
+## 📜 License
 
-## 📜 License 
-
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
